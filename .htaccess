@@ -2,7 +2,9 @@
   RewriteEngine On
 
   #adapt this following line to your path if necessary
-  RewriteBase /kufstein/baseproject
+  #RewriteBase /kufstein/baseproject
+  RewriteBase /webdev-project-viergewinnt
+
 
   ##
   # Change the RewriteBase if your project is in a subdirectoy and
