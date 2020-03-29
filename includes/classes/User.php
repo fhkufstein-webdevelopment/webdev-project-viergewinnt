@@ -64,7 +64,7 @@ class User extends Database
 
 	public function redirectToLogin()
 	{
-		if(API_CALL === true)
+		if('API_CALL'  === true)
 		{
 			header('Location: ../'.LOGIN_URL);
 		}
