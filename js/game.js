@@ -30,15 +30,23 @@ function start() {
  */
 function farbAuswahl(farbe) {
     spFarbe = farbe;
+    let startButton = $("#startGameButton");
     if (farbe === "yellow") {
         aiFarbe = "red";
+        startButton.removeClass("btn-danger");
+        startButton.addClass("btn-warning");
     } else {
+        startButton.removeClass("btn-warning");
+        startButton.addClass("btn-danger");
         aiFarbe = "yellow";
     }
-    console.log(farbe + " ai:" + aiFarbe);
-    drawTable(totalRows, cellsInRow);
 }
 
+function startButton() {
+    $("#preStartContainer").remove();
+    $('#gamerow').append('<div id="gamecontainer" class="col-md-8 col-sm-12"></div>');
+    drawTable(totalRows, cellsInRow);
+}
 /**
  * zeichnet das Spielfeld in der Größe der Parameter
  * gibt jedem Feld die onClick Function drawClick()
