@@ -1,0 +1,17 @@
+#main > .row > h1 {
+    color: #ffc800;
+    text-size: 10px;
+    font-family: "Century Gothic";
+    font-weight: lighter;
+}
+
+.col-sm-12 + p > a {
+    color: #ffc800;
+    text-size: 3px;
+    font-family: "Century Gothic";
+    text-decoration-style: dotted;
+    font-weight: bold;
+}
+
+
+
