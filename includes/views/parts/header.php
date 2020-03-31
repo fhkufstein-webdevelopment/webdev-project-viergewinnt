@@ -42,6 +42,19 @@
 
 		<?php if(LOGGED_IN == true): ?>
 			<nav class="navbar navbar-default">
+
+			<!-- text -->
+            <nav class="navbar navbar-light bg-light">
+              <span class="navbar-brand mb-0 h1">Spielregeln</span>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                     <span class="navbar-brand mb-0 h1">Scoreboard</span>
+                </nav>
+                <nav class="navbar navbar-light bg-light">
+                      <span class="navbar-brand mb-0 h1">Logout</span>
+                </nav>
+
+
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -51,7 +64,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="/" class="navbar-brand active">4 Gewinnt</a>
+						<!-- <a href="/" class="navbar-brand active">4 Gewinnt</a> -->
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

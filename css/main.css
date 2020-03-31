@@ -17,6 +17,8 @@ header {
 /* line 22, ../scss/main.scss */
 header .inner {
   margin: 0 auto;
+  color: red;
+  text-align: center;
   width: 90%;
 }
 /* line 26, ../scss/main.scss */
@@ -26,8 +28,10 @@ header .inner .logo {
 }
 /* line 30, ../scss/main.scss */
 header .inner .logo .name {
-  font-size: 25px;
+  font-size: 40px;
+  font-style: oblique;
   font-weight: 400;
+  font-family: Kefa;
 }
 /* line 35, ../scss/main.scss */
 header .inner .logo .version {
