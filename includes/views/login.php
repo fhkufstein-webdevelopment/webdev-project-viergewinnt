@@ -32,7 +32,7 @@ echo $this->header;
                     <input type="password" name="password" id="password" class="text form-control" value="" placeholder="Passwort">
                 </div>
             </div>
-            <button type="submit" class="btn btn-default">Anmelden</button>
+            <button type="submit" class="btn btn-outline-danger">Anmelden</button>
             <input type="hidden" name="action" value="login">
         </form>
     </div>

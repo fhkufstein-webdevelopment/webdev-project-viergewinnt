@@ -35,14 +35,22 @@
 </div>
 
 <script>
+
+    /*
+    VierGewinnt JavaScript Version
+     */
     var totalRows = 6;
     var cellsInRow = 6;
-    var spFarbe = "green";
-    var aiFarbe = "blue";
+    var spFarbe = "0";
+    var aiFarbe = "0";
     var container = document.getElementById('gamecontainer');
     var anzZuege = 0;
     var gameOver = false;
 
+
+    /**
+     * generiert die Buttons zur Farbauswahl
+     */
     function start() {
         var buttonY = document.createElement("button");
         var buttonR = document.createElement("button");
@@ -54,6 +62,10 @@
         container.append(buttonR);
     }
 
+    /**
+     * Spieler bekommt die ausgewählte Farbe zugeteilt, der Computer-Gegner bekommt die andere Farbe
+     * @param farbe
+     */
     function farbAuswahl(farbe) {
         spFarbe = farbe;
         if (farbe === "yellow") {
@@ -62,17 +74,23 @@
             aiFarbe = "yellow";
         }
         console.log(farbe + " ai:" + aiFarbe);
-        drawTable();
+        drawTable(totalRows, cellsInRow);
     }
 
-    function drawTable() {
+    /**
+     * zeichnet das Spielfeld in der Größe der Parameter
+     * gibt jedem Feld die onClick Function drawClick()
+     * @param rows
+     * @param cols
+     */
+    function drawTable(rows, cols) {
         var div1 = document.getElementById('gamecontainer');
         var tbl = document.createElement("table");
 
-        for (var r = 0; r < totalRows; r++) {
+        for (var r = 0; r < rows; r++) {
             var row = document.createElement("tr");
 
-            for (var c = 0; c < cellsInRow; c++) {
+            for (var c = 0; c < cols; c++) {
                 var cell = document.createElement("td");
                 cellid = r + '' + c;
                 cell.setAttribute('row', r);
@@ -90,12 +108,15 @@
         div1.appendChild(tbl);
     }
 
-
+    /**
+     * definiert das Feld in das geclickt wurde und ruft die drawCircle Function auf.
+     * ruft aiZug() auf --> der Computergegner ist nach dem Spieler an der Reihe
+     * @param feld
+     */
     function drawClick(feld) {
         let clickFeld = document.getElementById(feld);
         let col = clickFeld.getAttribute("col");
         let row = clickFeld.getAttribute("row");
-        console.log(row + " " + col);
         drawCircle(col, row, spFarbe);
 
         var millisecondsToWait = 500;
@@ -104,15 +125,23 @@
         }, millisecondsToWait);
     }
 
+    /**
+     * ruft die drawCircle() Function mit random Werten auf --> Zug von Computergegner
+     */
     function aiZug() {
         drawCircle(randomInt(cellsInRow), randomInt(totalRows), aiFarbe);
-
     }
 
     function randomInt(max) {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
+    /**
+     * Zeichnet einen Circle am Boden in die Row, die ausgewählt wurde.
+     * @param col
+     * @param row
+     * @param color
+     */
     function drawCircle(col, row, color) {
         let firstField = document.querySelector('[col="' + col + '"][row="' + 0 + '"]');
         if (!firstField.hasAttribute("color")) {
@@ -133,73 +162,146 @@
         }
     }
 
+    /**
+     * Checkt ob gewonnen wurde
+     * @param col
+     * @param row
+     * @param color
+     */
     function checkIfWon(col, row, color) {
-        if (row <= (totalRows - 4)) {
-            checkSenkrecht(col, row, color);
-            if (col <= (cellsInRow - 4))
-                checkDiagonal(col, row, color, true);
-            if (col >= 4)
-                checkDiagonal(col, row, color, false);
-        }
+        checkSenkrecht(col, row, color);
+        checkDiagonal(col, row, color);
+        checkDiagonalLinks(col, row, color);
+        checkWaagrecht(col, row, color);
     }
 
+    /**
+     * checkt von oben nach unten ob 4 Circles die gleiche Farbe besitzen
+     * @param col
+     * @param row
+     * @param color
+     */
     function checkSenkrecht(col, row, color) {
-        for (let i = 1; i < 4; i++) {
-            let newRow = (row + i);
-            if (document.querySelector('[col="' + col + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
-                i = 1;
-                break;
-            } else {
-                if (i === 3) {
-                    alert("win " + color);
-                    gameOver = true;
-                    break;
-                }
-
-            }
-        }
-    }
-
-    function checkDiagonal(col, row, color, diagonalRechts) {
-        if (diagonalRechts) {
+        if (row <= totalRows - 4) {
             for (let i = 1; i < 4; i++) {
                 let newRow = (row + i);
-                let newCol = (parseInt(col) + i);
-                console.log("new col: " + newCol + " - new Row: " + newRow);
-                if (document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
-                    console.log("break 1: " + document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") + "color= " + color);
+                if (document.querySelector('[col="' + col + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
                     i = 1;
                     break;
                 } else {
                     if (i === 3) {
-                        alert("win diagonal " + diagonalRechts + " " + color);
+                        alert("win Senkrecht" + color);
                         gameOver = true;
                         break;
                     }
-
-                }
-            }
-        } else {
-            for (let i = 1; i < 4; i++) {
-                let newRow = (row + i);
-                let newCol = (col - i);
-                console.log("new col: " + newCol + " - new Row: " + newRow);
-                if (document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
-                    console.log("break 1: " + document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") + "color= " + color);
-                    i = 1;
-                    break;
-                } else {
-                    if (i === 3) {
-                        alert("win diagonal " + diagonalRechts + " " + color);
-                        gameOver = true;
-                        break;
-                    }
-
                 }
             }
         }
     }
 
+    /**
+     * geht zuerst von dem letzten geclickten Feld schräg nach links oben, prüft anschließend ob nach rechts unten 4 felder gleich sind
+     * @param col
+     * @param row
+     * @param color
+     */
+    function checkDiagonal(col, row, color) {
+
+        if (row >= 1 && col >= 1) {
+            while (document.querySelector('[col="' + (col - 1) + '"][row="' + (row - 1) + '"]')) {
+                if (document.querySelector('[col="' + (col - 1) + '"][row="' + (row - 1) + '"]').getAttribute("color") === color) {
+                    col--;
+                    row--;
+                } else {
+                    break;
+                }
+            }
+        }
+        if (col <= cellsInRow - 4 && row <= totalRows - 4) {
+            for (let i = 1; i < 4; i++) {
+                let newCol = (col + i);
+                let newRow = (row + i);
+                if (document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
+                    i = 1;
+                    break;
+                } else {
+                    if (i === 3) {
+                        alert("win Diagonal rechts runter " + color);
+                        gameOver = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * geht zuerst von dem letzten geclickten Feld schräg nach links unten, prüft anschließend ob nach rechts oben 4 felder gleich sind
+     * @param col
+     * @param row
+     * @param color
+     */
+    function checkDiagonalLinks(col, row, color) {
+        if (row <= totalRows - 2 && col >= 1) {
+            while (document.querySelector('[col="' + (col - 1) + '"][row="' + (row + 1) + '"]')) {
+                if (document.querySelector('[col="' + (col - 1) + '"][row="' + (row + 1) + '"]').getAttribute("color") === color) {
+                    col--;
+                    row++;
+                } else {
+                    break;
+                }
+            }
+        }
+        if (row >= 4 && col <= cellsInRow - 4) {
+            for (let i = 1; i < 4; i++) {
+                let newCol = (col + i);
+                let newRow = (row - i);
+                if (document.querySelector('[col="' + newCol + '"][row="' + newRow + '"]').getAttribute("color") !== color) {
+                    i = 1;
+                    break;
+                } else {
+                    if (i === 3) {
+                        alert("win Diagonal links rauf " + color);
+                        gameOver = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * geht zuerst von dem letzten geclickten Feld nach links, prüft anschließend ob nach rechts 4 felder gleich sind
+     * @param col
+     * @param row
+     * @param color
+     */
+    function checkWaagrecht(col, row, color) {
+        if (col >= 1) {
+            while (document.querySelector('[col="' + (col - 1) + '"][row="' + row + '"]')) {
+                if (document.querySelector('[col="' + (col - 1) + '"][row="' + row + '"]').getAttribute("color") === color) {
+                    col--;
+                } else {
+                    break;
+                }
+            }
+        }
+        if (col <= cellsInRow - 4) {
+            for (let i = 1; i < 4; i++) {
+                let newCol = (col + i);
+                if (document.querySelector('[col="' + newCol + '"][row="' + row + '"]').getAttribute("color") !== color) {
+                    i = 1;
+                    break;
+                } else {
+                    if (i === 3) {
+                        alert("win Waagrecht " + color);
+                        gameOver = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
 
     window.onload = start;
 </script>
