@@ -7,7 +7,7 @@ class ScoreboardModel
     {
         $db = new Database();
 
-        $sql = "SELECT user.name, game.Anzahl_Zuege, game.Gewonnen FROM game join user on game.User_ID = user.id order by game.Anzahl_Zuege desc";
+        $sql = "SELECT user.name, game.Anzahl_Zuege, game.Gewonnen FROM game join user on game.User_ID = user.id order by game.Anzahl_Zuege asc limit 15";
         $result = $db->query($sql);
 
         if ($db->numRows($result) > 0) {
