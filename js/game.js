@@ -11,20 +11,6 @@ var gameOver = false;
 
 
 /**
- * generiert die Buttons zur Farbauswahl
- */
-function start() {
-    var buttonY = document.createElement("button");
-    var buttonR = document.createElement("button");
-    buttonY.setAttribute("onClick", "farbAuswahl('yellow')");
-    buttonR.setAttribute("onClick", "farbAuswahl('red')");
-    buttonY.innerHTML = "Gelb";
-    buttonR.innerHTML = "Rot";
-    container.append(buttonY);
-    container.append(buttonR);
-}
-
-/**
  * Spieler bekommt die ausgewählte Farbe zugeteilt, der Computer-Gegner bekommt die andere Farbe
  * @param farbe
  */
@@ -47,6 +33,7 @@ function startButton() {
     $('#gamerow').append('<div id="gamecontainer" class="col-md-8 col-sm-12"></div>');
     drawTable(totalRows, cellsInRow);
 }
+
 /**
  * zeichnet das Spielfeld in der Größe der Parameter
  * gibt jedem Feld die onClick Function drawClick()
@@ -102,6 +89,7 @@ function drawClick(feld) {
  * ruft die drawCircle() Function mit random Werten auf --> Zug von Computergegner
  */
 function aiZug() {
+    console.log("ai Zug");
     drawCircle(randomInt(cellsInRow), randomInt(totalRows), aiFarbe);
 }
 
@@ -142,10 +130,14 @@ function drawCircle(col, row, color) {
  * @param color
  */
 function checkIfWon(col, row, color) {
-    checkSenkrecht(col, row, color);
-    checkDiagonal(col, row, color);
-    checkDiagonalLinks(col, row, color);
-    checkWaagrecht(col, row, color);
+    if (!gameOver) checkSenkrecht(col, row, color);
+
+    if (!gameOver) checkDiagonal(col, row, color);
+
+    if (!gameOver) checkDiagonalLinks(col, row, color);
+
+    if (!gameOver) checkWaagrecht(col, row, color);
+
 }
 
 /**
@@ -163,8 +155,8 @@ function checkSenkrecht(col, row, color) {
                 break;
             } else {
                 if (i === 3) {
-                    alert("win Senkrecht" + color);
                     gameOver = true;
+                    gameWon(anzZuege, color);
                     break;
                 }
             }
@@ -199,8 +191,8 @@ function checkDiagonal(col, row, color) {
                 break;
             } else {
                 if (i === 3) {
-                    alert("win Diagonal rechts runter " + color);
                     gameOver = true;
+                    gameWon(anzZuege, color);
                     break;
                 }
             }
@@ -234,8 +226,8 @@ function checkDiagonalLinks(col, row, color) {
                 break;
             } else {
                 if (i === 3) {
-                    alert("win Diagonal links rauf " + color);
                     gameOver = true;
+                    gameWon(anzZuege, color);
                     break;
                 }
             }
@@ -267,11 +259,31 @@ function checkWaagrecht(col, row, color) {
                 break;
             } else {
                 if (i === 3) {
-                    alert("win Waagrecht " + color);
                     gameOver = true;
+                    gameWon(anzZuege, color);
                     break;
                 }
             }
         }
     }
+}
+
+function gameWon (anz_zuege, color){
+    var spielerGewonnen = true;
+    if(color === aiFarbe){
+        spielerGewonnen = false;
+    }
+
+    $.ajax({
+        'url':    'index',
+        'method': 'post',
+        'data':    {'action': 'saveScore', 'anz_zuege': anz_zuege, 'gewonnen': spielerGewonnen},
+        'success': function(receivedData) {
+            if(receivedData.result) {
+                //after save change url to scoreboard.php
+                location.href = 'scoreboard';
+            }
+        }
+    });
+
 }
