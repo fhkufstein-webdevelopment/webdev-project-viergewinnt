@@ -53,52 +53,43 @@
 </head>
 <body>
 <header>
-    <div class="inner">
-        <div class="logo">
-            <h2>4 Gewinnt</h2>
+    <nav class="navbar navbar-expand-md sticky-top mb-2 box-shadow">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarToggler">
+
+            <ul class="nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-outline-secondary" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-secondary" href="rules">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-secondary" href="#scoreboard">Scoreboard</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span class="navbar-text mr-sm-2">Angemeldet als <strong class="username"><?php echo $this->username; ?></strong></span>
+                <a class="btn btn-dark my-2 my-sm-0" href="logout" role="button">Logout</a>
+            </form>
         </div>
+    </nav>
+    <div class="jumbotron-fluid align-items-center" id="logo">
+        <div class="container text-center bg-transparent">
+            <div class="row">
+                <div class="col-12">
+                    <img src="img/kugeln.png" class="img-fluid" alt="Responsive image">
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 		<?php if(LOGGED_IN == true): ?>
-			<nav class="navbar navbar-default">
 
-			<!-- text -->
-            <nav class="navbar navbar-light bg-light">
-              <span class="navbar-brand mb-0 h1">Spielregeln</span>
-                </nav>
-                <nav class="navbar navbar-light bg-light">
-                     <span class="navbar-brand mb-0 h1">Scoreboard</span>
-                </nav>
-                <nav class="navbar navbar-light bg-light">
-                      <span class="navbar-brand mb-0 h1">Logout</span>
-                </nav>
-
-
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- <a href="/" class="navbar-brand active">4 Gewinnt</a> -->
-					</div>
-
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="logout">(Abmelden)</a></li>
-                        </ul>
-
-                        <p class="navbar-text navbar-right">Angemeldet als <strong
-                                    class="username"><?php echo $this->username; ?></strong></p>
-
-                    </div>
-                </div>
-            </nav>
         <?php else: ?>
             <nav class="mainnav">
                 <ul class="nav nav-pills">
