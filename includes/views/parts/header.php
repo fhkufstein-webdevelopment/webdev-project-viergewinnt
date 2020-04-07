@@ -16,11 +16,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/game.css">
+
+    <!-- Links Login -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
     <?php if ($this->current == "login"): ?>
         <link href="css/toastr.min.css" rel="stylesheet">
     <?php endif; ?>
 
     <link href="css/main.css" rel="stylesheet">
+
+    <style type="text/css">
+        .modal-backdrop
+        {
+            opacity:0.7 !important;
+        }
+    </style>
 
 
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

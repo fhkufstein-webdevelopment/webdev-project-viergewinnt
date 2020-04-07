@@ -3,55 +3,49 @@
 echo $this->header;
 
 ?>
-    <div id="main">
-        <div class="row">
-            <h1 class="col-xs-12">Login</h1>
-            <p class="col-xs-12">
-                Melden Sie sich bitte an um den Dienst nutzen zu können. Sie besitzen noch keinen Account? Dann können Sie sich <a href="login#registrierung" class="registerOverlay">hier registrieren</a>.
-            </p>
+    <div class="redcircle"></div>
+    <div class="yellowcircle"></div>
+    <div class="login-form">
+        <form method="post" action="login" class="form-horizontal col-sm-12">
+            <?php if($this->errorPasswd == true): ?>
+                <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4>Benutzername und/oder Passwort sind falsch</h4>
+                    <p>Prüfen Sie bitte ob Sie sich nicht vertippt haben und versuchen Sie es erneut!</p>
+                </div>
+            <?php endif; ?>
 
-            <form method="post" action="login" class="form-horizontal col-xs-12">
-                <?php if($this->errorPasswd == true): ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4>Benutzername und/oder Passwort sind falsch</h4>
-                        <p>Prüfen Sie bitte ob Sie sich nicht vertippt haben und versuchen Sie es erneut!</p>
-                    </div>
-                <?php endif; ?>
-                <div class="form-group">
-                    <label for="username" class="col-xs-12 col-md-2">Benutzername</label>
-                    <div class="col-xs-12 col-md-10">
-                        <input type="text" name="username" id="username" class="text form-control" value="" placeholder="Benutzername">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-xs-12 col-md-2">Passwort</label>
-                    <div class="col-xs-12 col-md-10">
-                        <input type="password" name="password" id="password" class="text form-control" value="" placeholder="Passwort">
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-outline-danger">Anmelden</button>
+            <h2 class="text-center">Login</h2>
+            <div class="form-group has-error">
+                <input type="text" class="form-control" name="username" placeholder="Benutzername" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Passwort" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-warning btn-md">Anmelden</button>
                 <input type="hidden" name="action" value="login">
-            </form>
-        </div>
+            </div>
+            <p class="text-center small">Sie haben noch keinen Account? <a href="login#registrierung" class="registerOverlay">Hier</a> <br>können Sie sich registrieren.<br></p>
+        </form>
     </div>
 
-    <div class="modal fade<?php if($registerError):?> in<?php endif; ?>" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+    <div class="modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="registerModalLabel">Registrierung</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <p class="col-xs-12">
-                            Wir benötigen folgende Angaben um Sie für unseren Dienst registrieren zu können:
+                        <p class="col-sm-12">
+                            Geben Sie folgende Daten ein, um sich für das Spiel registrieren zu können:
                         </p>
 
-                        <form method="post" action="login" class="col-xs-12">
+                        <form method="post" action="login" class="col-sm-12">
 
                             <div class="form-group">
                                 <label for="name">Benutzername:</label>
@@ -72,8 +66,8 @@ echo $this->header;
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
-                    <button type="button" class="btn btn-primary">Registrieren</button>
+                    <button type="button" class="btn btn-outline-warning">Registrieren</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Abbrechen</button>
                 </div>
             </div>
         </div>
