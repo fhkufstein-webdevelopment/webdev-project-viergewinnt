@@ -41,7 +41,7 @@
 <header>
     <div class="inner">
         <div class="logo">
-            <div class="name">4 Gewinnt</div>
+            <h2>4 Gewinnt</h2>
         </div>
 
 

@@ -12,8 +12,12 @@ echo $this->header;
                 </script>
                 <div class="row justify-content-center">
                     <div id="buttoncontainer" class="col-md-10 col-sm-6">
-                        <button id="farbeRotButton" type="button" class="btn btn-lg btn-warning btn-block" onclick="farbAuswahl('yellow')">Gelb</button>
-                        <button id="farbeGelbButton" type="button" class="btn btn-lg btn-danger btn-block" onclick="farbAuswahl('red')">Rot</button>
+                        <button id="farbeRotButton" type="button" class="btn btn-lg btn-warning btn-block"
+                                onclick="farbAuswahl('yellow')">Gelb
+                        </button>
+                        <button id="farbeGelbButton" type="button" class="btn btn-lg btn-danger btn-block"
+                                onclick="farbAuswahl('red')">Rot
+                        </button>
                     </div>
                 </div>
                 <div class="row justify-content-center">
@@ -23,6 +27,14 @@ echo $this->header;
             <div id="gameInfo">
             </div>
         </div>
+        <div class="row justify-content-center" id="gewonnenDiv">
+
+        </div>
+        <div class="row justify-content-center" id="zumScoreBoard">
+
+        </div>
+
+    </div>
 
 <?php
 

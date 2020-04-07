@@ -29,9 +29,7 @@ header .inner .logo {
 /* line 30, ../scss/main.scss */
 header .inner .logo .name {
   font-size: 40px;
-  font-style: oblique;
   font-weight: 400;
-  font-family: Kefa;
 }
 /* line 35, ../scss/main.scss */
 header .inner .logo .version {

@@ -89,8 +89,8 @@ function drawClick(feld) {
  * ruft die drawCircle() Function mit random Werten auf --> Zug von Computergegner
  */
 function aiZug() {
-    console.log("ai Zug");
-    drawCircle(randomInt(cellsInRow), randomInt(totalRows), aiFarbe);
+
+    if(!gameOver) drawCircle(randomInt(cellsInRow), randomInt(totalRows), aiFarbe);
 }
 
 function randomInt(max) {
@@ -269,15 +269,19 @@ function checkWaagrecht(col, row, color) {
 }
 
 function gameWon (anz_zuege, color){
-    var spielerGewonnen = true;
-    if(color === aiFarbe){
-        spielerGewonnen = false;
-    }
+    var gewonnen = true;
+    $('#gewonnenDiv').append('<p>du hast gewonnen</p>');
+    $('#zumScoreBoard').append('<button id="zumSBButton" type="button" class="btn btn-lg btn-danger"\n' +
+        '                                onclick="updateDB('+anz_zuege+','+ gewonnen+')">zum Scoreboard</button>');
 
+
+}
+
+function updateDB(anz_zuege, gewonnen){
     $.ajax({
         'url':    'index',
         'method': 'post',
-        'data':    {'action': 'saveScore', 'anz_zuege': anz_zuege, 'gewonnen': spielerGewonnen},
+        'data':    {'action': 'saveScore', 'anz_zuege': anz_zuege, 'gewonnen': gewonnen},
         'success': function(receivedData) {
             if(receivedData.result) {
                 //after save change url to scoreboard.php

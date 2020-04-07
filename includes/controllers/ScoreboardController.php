@@ -2,7 +2,7 @@
 
 class ScoreboardController extends Controller
 {
-    protected $viewFileName = "scoreboard.php";
+    protected $viewFileName = "scoreboard";
     protected $loginRequired = true;
 
 
