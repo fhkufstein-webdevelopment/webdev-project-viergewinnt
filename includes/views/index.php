@@ -10,6 +10,7 @@ echo $this->header;
                 <script type="text/javascript">
 
                 </script>
+                <div class="inner">
                 <div class="row justify-content-center">
                     <div id="buttoncontainer" class="col-md-10 col-sm-6">
                         <button id="farbeRotButton" type="button" class="btn btn-lg btn-warning btn-block"
@@ -20,6 +21,7 @@ echo $this->header;
                         </button>
                     </div>
                 </div>
+
                 <div class="row justify-content-center">
                     <button id="startGameButton" class="btn btn-lg btn-danger" onclick="startButton()">Start</button>
                 </div>
@@ -32,6 +34,7 @@ echo $this->header;
         </div>
         <div class="row justify-content-center" id="zumScoreBoard">
 
+        </div>
         </div>
 
     </div>

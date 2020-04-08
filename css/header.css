@@ -5,12 +5,12 @@ header {
 
 .navbar {
     width: 100%;
-    background-color: lightgrey;
+    background-color: darkgrey;
     border: none !important;
     border-radius: 0;
 }
 
-header::after {
+header::after{
     content: '';
     display: block;
     height: 10px;
@@ -18,3 +18,5 @@ header::after {
     background-color: darkgrey;
     margin-top: 20px;
 }
+
+

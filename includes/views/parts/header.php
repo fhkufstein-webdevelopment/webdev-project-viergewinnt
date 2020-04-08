@@ -28,6 +28,7 @@
     <?php endif; ?>
 
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
 
     <style type="text/css">
         .modal-backdrop
@@ -62,13 +63,13 @@
 
             <ul class="nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-outline-secondary" href="#home">Home</a>
+                    <a class="nav-link btn btn-outline-dark" href="index">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-secondary" href="rules">Rules</a>
+                    <a class="nav-link btn btn-outline-dark" href="rules">Rules</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-outline-secondary" href="#scoreboard">Scoreboard</a>
+                    <a class="nav-link btn btn-outline-dark" href="scoreboard">Scoreboard</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
