@@ -1,0 +1,170 @@
+/* Animationen */
+.redlaugh {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-image: url("../img/rot_lachend.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-direction: initial;
+
+    animation: redlaugh 4s infinite;
+}
+
+@keyframes redlaugh {
+    0%, 100% {
+        transform: rotate(0deg);
+        right: 250px;
+        top: 250px;
+    }
+    25% {
+        right: 350px;
+        top: 300px;
+        transform: rotate(30deg);
+    }
+    50% {
+        right: 250px;
+        top: 350px;
+        transform: rotate(-20deg);
+    }
+    75% {
+        right: 150px;
+        top: 300px;
+        transform: rotate(30deg);
+    }
+}
+
+
+
+.yellowtongue {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-image: url("../img/gelb_zunge.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-direction: alternate;
+
+    animation: yellowtongue 5s infinite;
+}
+
+@keyframes yellowtongue {
+    0% {
+        transform: rotate(0deg);
+        left: 200px;
+        top: 450px;
+    }
+    25% {
+        transform: rotate(360deg);
+        left: 200px;
+        top: 450px;
+    }
+    50% {
+        transform: rotate(0deg);
+        left: 450px;
+        top: 450px;
+    }
+    75% {
+        transform: rotate(0deg);
+        left: 450px;
+        top: 450px;
+    }
+    100% {
+        transform: rotate(-360deg);
+        left: 200px;
+        top: 450px;
+    }
+}
+
+
+
+.happysad {
+    position: absolute;
+    width: 11%;
+    height: 11%;
+    background-image: url("../img/rot_traurig.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-direction: initial;
+
+    animation: happysad 5s infinite;
+}
+
+@keyframes happysad {
+    0% {
+        top: 250px;
+        left: 70px;
+    }
+    50% {
+        background-image: url("../img/gelb_lachend.png");
+        width: 9%;
+        height: 9%;
+    }
+    75% {
+        top: 400px;
+        left: 70px;
+        background-image: url("../img/gelb_lachend.png");
+        width: 9%;
+        height: 9%;
+    }
+    100% {
+        top: 250px;
+        left: 70px;
+        background-image: url("../img/rot_traurig.png");
+        width: 11%;
+        height: 11%;
+    }
+
+}
+
+
+
+.yellowscared {
+    position: absolute;
+    width: 9%;
+    height: 9%;
+    background-image: url("../img/gelb_erschrocken.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-direction: alternate;
+
+    animation: yellowscared 4s infinite;
+}
+
+@keyframes yellowscared {
+    0%, 100% {
+        top: 500px;
+        right: 10px;
+    }
+    50% {
+        top: 500px;
+        right: 100px;
+        transform: rotate(30deg)
+    }
+}
+
+
+
+.redsmile {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    background-image: url("../img/rot_smile.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-direction: alternate;
+
+    animation: redsmile 4s infinite;
+}
+
+@keyframes redsmile {
+    0%, 100% {
+        top: 500px;
+        right: 200px;
+    }
+    50% {
+        top: 500px;
+        right: 100px;
+        transform: rotate(-30deg)
+    }
+}
