@@ -4,8 +4,11 @@ echo $this->header;
 
 ?>
 
-<div class="redcircle"></div>
-<div class="yellowcircle"></div>
+
+<div class="yellowtongue"></div>
+
+<div class="yellowscared"></div>
+<div class="redsmile"></div>
 <div id="main">
     <div class="row">
         <h1 class="col-sm-12">Logout erfolgreich</h1>

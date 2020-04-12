@@ -3,8 +3,11 @@
 echo $this->header;
 
 ?>
-    <div class="redcircle"></div>
-    <div class="yellowcircle"></div>
+    <div class="redlaugh"></div>
+    <div class="yellowtongue"></div>
+    <div class="happysad"></div>
+    <div class="yellowscared"></div>
+    <div class="redsmile"></div>
     <div class="login-form">
         <form method="post" action="login" class="form-horizontal col-sm-12">
             <?php if($this->errorPasswd == true): ?>

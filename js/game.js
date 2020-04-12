@@ -3,8 +3,8 @@ VierGewinnt JavaScript Version
  */
 var totalRows = 6;
 var cellsInRow = 6;
-var spFarbe = "0";
-var aiFarbe = "0";
+var spFarbe = "red";
+var aiFarbe = "yellow";
 var container = document.getElementById('gamecontainer');
 var anzZuege = 0;
 var gameOver = false;
@@ -152,11 +152,26 @@ function checkSenkrecht(col, row, color) {
             } else {
                 if (i === 3) {
                     gameOver = true;
-                    gameWon(anzZuege, color);
+                    checkWinner(anzZuege, color, col, newRow);
                     break;
                 }
             }
         }
+    }
+}
+
+/**
+ * Checkt, ob der Spieler gewonnen oder verloren hat.
+ * @param anzZuege
+ * @param color
+ * @param col
+ * @param row
+ */
+function checkWinner(anzZuege, color, col, row) {
+    if (document.querySelector('[col="' + col + '"][row="' + row + '"]').getAttribute("color") === spFarbe) {
+        gameWon(anzZuege, color, true);
+    } else {
+        gameWon(anzZuege, color, false)
     }
 }
 
@@ -188,7 +203,7 @@ function checkDiagonal(col, row, color) {
             } else {
                 if (i === 3) {
                     gameOver = true;
-                    gameWon(anzZuege, color);
+                    checkWinner(anzZuege, color, newCol, newRow);
                     break;
                 }
             }
@@ -223,7 +238,7 @@ function checkDiagonalLinks(col, row, color) {
             } else {
                 if (i === 3) {
                     gameOver = true;
-                    gameWon(anzZuege, color);
+                    checkWinner(anzZuege, color, newCol, newRow);
                     break;
                 }
             }
@@ -256,7 +271,7 @@ function checkWaagrecht(col, row, color) {
             } else {
                 if (i === 3) {
                     gameOver = true;
-                    gameWon(anzZuege, color);
+                    checkWinner(anzZuege, color, newCol, row);
                     break;
                 }
             }
@@ -264,15 +279,29 @@ function checkWaagrecht(col, row, color) {
     }
 }
 
-function gameWon(anz_zuege, color) {
-    var gewonnen = true;
-    $('#gewonnenDiv').append('<p>du hast gewonnen</p>');
+/**
+ * Gibt dem Spieler bekannt, ob dieser gewonnen oder verloren hat und verlinkt zum Scoreboard.
+ * @param anz_zuege
+ * @param color
+ * @param spGewonnen
+ */
+function gameWon(anz_zuege, color, spGewonnen) {
+    if (spGewonnen) {
+        $('#gewonnenDiv').append('<p>du hast gewonnen</p>');
+    } else {
+        $('#gewonnenDiv').append('<p>du hast verloren</p>');
+    }
     $('#zumScoreBoard').append('<button id="zumSBButton" type="button" class="btn btn-lg btn-danger"\n' +
-        '                                onclick="updateDB(' + anz_zuege + ',' + gewonnen + ')">zum Scoreboard</button>');
+        '                                onclick="updateDB(' + anz_zuege + ',' + spGewonnen + ')">zum Scoreboard</button>');
 
 
 }
 
+/**
+ * Sendet die Daten des Spiels an die Datenbank.
+ * @param anz_zuege
+ * @param gewonnen
+ */
 function updateDB(anz_zuege, gewonnen) {
     $.ajax({
         'url': 'index',
