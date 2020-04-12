@@ -55,50 +55,59 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md sticky-top mb-2 box-shadow">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarToggler">
-
-            <ul class="nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link btn btn-outline-dark" href="index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-dark" href="rules">Rules</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-outline-dark" href="scoreboard">Scoreboard</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <span class="navbar-text mr-sm-2">Angemeldet als <strong class="username"><?php echo $this->username; ?></strong></span>
-                <a class="btn btn-dark my-2 my-sm-0" href="logout" role="button">Logout</a>
-            </form>
-        </div>
-    </nav>
-    <div class="jumbotron-fluid align-items-center" id="logo">
-        <div class="container text-center bg-transparent">
-            <div class="row">
-                <div class="col-12">
-                    <img src="img/kugeln.png" class="img-fluid" alt="Responsive image">
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 		<?php if(LOGGED_IN == true): ?>
+            <nav class="navbar navbar-expand-md sticky-top mb-2 box-shadow">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+                        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarToggler">
+
+                    <ul class="nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link btn btn-outline-dark" href="index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-dark" href="rules">Rules</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-outline-dark" href="scoreboard">Scoreboard</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+            <span class="navbar-text mr-sm-2">Angemeldet als <strong
+                        class="username"><?php echo $this->username; ?></strong></span>
+                        <a class="btn btn-dark my-2 my-sm-0" href="logout" role="button">Logout</a>
+                    </form>
+                </div>
+            </nav>
+
+            <div>
+                <div class="jumbotron-fluid align-items-center" id="logo">
+                    <div class="container text-center bg-transparent">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="img/kugeln.png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         <?php else: ?>
-            <nav class="mainnav">
-                <ul class="nav nav-pills">
-                    <li<?php if ($this->current == "login"): ?>class
-                    ="active"<?php endif; ?>><a href="login">Login</a></li>
-                </ul>
-            </nav>
+            <div class="jumbotron-fluid align-items-center" id="logo">
+                <div class="container text-center bg-transparent">
+                    <div class="row">
+                        <div class="col-12">
+                            <img src="img/kugeln.png" class="img-fluid" alt="Responsive image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         <?php endif; ?>
 
     </div>

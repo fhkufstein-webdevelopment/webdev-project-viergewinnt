@@ -2,6 +2,7 @@
 #main {
   margin: 0 auto;
   width: 90%;
+
 }
 @media (min-width: 990px) {
   /* line 11, ../scss/main.scss */
@@ -10,43 +11,30 @@
   }
 }
 
-/* line 21, ../scss/main.scss */
-header {
-  margin-bottom: 20px;
+div#rules{
+  background-color: whitesmoke;
 }
-/* line 22, ../scss/main.scss */
-header .inner {
+
+
+div#preStartContainer{
   margin: 0 auto;
-  color: red;
-  text-align: center;
-  width: 90%;
-}
-/* line 26, ../scss/main.scss */
-header .inner .logo {
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-/* line 30, ../scss/main.scss */
-header .inner .logo .name {
-  font-size: 40px;
-  font-weight: 400;
-}
-/* line 35, ../scss/main.scss */
-header .inner .logo .version {
-  color: #aaa;
-  font-size: 10px;
-}
-/* line 36, ../scss/main.scss */
-header .inner .logo .version::before {
-  content: "Version";
-  display: inline-block;
-  margin-right: 5px;
-}
-@media (min-width: 990px) {
-  /* line 22, ../scss/main.scss */
-  header .inner {
-    width: 990px;
-  }
+  background-color: whitesmoke;
+  border: white 3px solid;
+  width: 400px;
+  height: 450px;
+  padding: 35px;
+  border-radius: 5px;
+  opacity: 0.85;
 }
 
+div#toRules{
+  padding-right: 20px !important;
+  width: 135px;
+  height: 135px;
+}
 
+div#toScoreboard{
+  padding-left: 20px !important;
+  width: 125px;
+  height: 125px;
+}

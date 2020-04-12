@@ -1,11 +1,12 @@
 header {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     background-color: transparent;
 }
 
 .navbar {
+
     width: 100%;
-    background-color: darkgrey;
+    background-color: whitesmoke;
     border: none !important;
     border-radius: 0;
 }
@@ -15,8 +16,19 @@ header::after{
     display: block;
     height: 10px;
     width: 100%;
-    background-color: darkgrey;
-    margin-top: 20px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* fixierte Höhe */
+    height: 60px;
+    line-height: 60px;
+    background-color: whitesmoke;
 }
 
 

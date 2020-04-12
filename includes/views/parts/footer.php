@@ -1,13 +1,9 @@
-
-</body>
-</html>
 <body>
-<div class="footer text-white" id="footer" style="background-color:darkgrey">
-    <div class="container pt-5 pb-4">
-        Copywrite 2020
+<footer class="footer">
+    <div class="container">
+        <span class="text-muted">© Vier Gewinnt Team 2020</span>
     </div>
-</div>
-
+</footer>
 </body>
 </html>
 
