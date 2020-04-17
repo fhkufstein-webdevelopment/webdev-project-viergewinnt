@@ -4,7 +4,9 @@ echo $this->header;
 
 ?>
 
+<div class="redlaugh"></div>
 <div class="yellowtongue"></div>
+<div class="happysad"></div>
 <div class="yellowscared"></div>
 <div class="redsmile"></div>
 <div id="main">

@@ -2,6 +2,7 @@
 
 echo $this->header;
 
+
 ?>
 
 <div id="main">
