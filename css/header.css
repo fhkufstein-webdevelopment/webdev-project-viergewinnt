@@ -4,11 +4,16 @@ header {
 }
 
 .navbar {
-
+    position: fixed;
     width: 100%;
-    background-color: whitesmoke;
-    border: none !important;
-    border-radius: 0;
+    background-color: #ffca2b;
+}
+
+a.nav-link:focus,
+a.nav-link:hover{
+    color: #e15260 !important;
+    font-weight: bold;
+    /* border-bottom: 3px solid #e15260; */
 }
 
 header::after{
@@ -20,15 +25,14 @@ header::after{
     margin-top: 10px;
 }
 
-
 .footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom:0;
+    background-color: #ffca2b;
     width: 100%;
     /* fixierte Höhe */
     height: 60px;
     line-height: 60px;
-    background-color: whitesmoke;
 }
 
 

@@ -3,9 +3,9 @@
 echo $this->header;
 
 ?>
-
+    <div id="main">
     <div id="rules">
-        <div class="container text-center py-4">
+        <div class="container text-center py-5">
             <h3 class="text-center display-4">Spielregeln</h3>
 
             <p>Ziel bei „Vier gewinnt“ ist es, die Spielchips der eigenen Farbe so zu platzieren, dass 4 Spielchips
@@ -39,7 +39,7 @@ echo $this->header;
             </div>
         </div>
     </div>
-
+    </div>
 
 <?php
 

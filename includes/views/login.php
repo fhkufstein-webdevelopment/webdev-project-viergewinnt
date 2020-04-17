@@ -3,11 +3,14 @@
 echo $this->header;
 
 ?>
+
     <div class="redlaugh"></div>
     <div class="yellowtongue"></div>
     <div class="happysad"></div>
     <div class="yellowscared"></div>
     <div class="redsmile"></div>
+<div id="main">
+    <div id="login">
     <div class="login-form">
         <form method="post" action="login" class="form-horizontal col-sm-12">
             <?php if($this->errorPasswd == true): ?>
@@ -75,6 +78,8 @@ echo $this->header;
             </div>
         </div>
     </div>
+    </div>
+</div>
 <?php
 
 echo $this->footer;
