@@ -34,7 +34,7 @@
     <style type="text/css">
         .modal-backdrop
         {
-            opacity:0.7 !important;
+            opacity:0.3 !important;
         }
     </style>
 

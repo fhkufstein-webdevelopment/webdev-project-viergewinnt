@@ -6,7 +6,7 @@ header {
 .navbar {
 
     width: 100%;
-    background-color: whitesmoke;
+    background-color: #ffca2d;
     border: none !important;
     border-radius: 0;
 }
@@ -22,7 +22,7 @@ header::after{
 
 
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     /* fixierte Höhe */
@@ -30,5 +30,6 @@ header::after{
     line-height: 60px;
     background-color: whitesmoke;
 }
+
 
 
