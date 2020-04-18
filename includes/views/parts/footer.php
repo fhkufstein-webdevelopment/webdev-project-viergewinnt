@@ -1,3 +1,4 @@
+<html>
 <body>
 <footer class="footer">
     <div class="container">

@@ -94,28 +94,28 @@
 
 
 /* Logout */
-#main.row {
+#logout.row {
     text-align: center;
 }
 
-#main h1.col-sm-12 {
+#logout h1.col-sm-12 {
     color: #ffc800;
     font-weight: bold;
     font-family: "Century Gothic";
 }
 
-#main h1.col-sm-12:hover {
+#logout h1.col-sm-12:hover {
     color: #ff0000;
     font-weight: bold;
     font-family: "Century Gothic";
 }
 
-#main p > a {
+#logout p > a {
     color: #ffc800;
     font-weight: bold;
 }
 
-#main p > a:hover {
+#logout p > a:hover {
     color: #ff0000;
     font-weight: bold;
 }

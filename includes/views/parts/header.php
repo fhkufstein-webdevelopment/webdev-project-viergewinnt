@@ -57,7 +57,8 @@
 <header>
 
 		<?php if(LOGGED_IN == true): ?>
-            <nav class="navbar navbar-expand-md sticky-top mb-2 box-shadow">
+
+            <nav class="navbar navbar-expand-md navbar-light sticky-top mb-2 box-shadow">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
                         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -65,21 +66,21 @@
 
                 <div class="collapse navbar-collapse" id="navbarToggler">
 
-                    <ul class="nav mr-auto">
+                    <ul class="nav mr-auto" id="navul">
                         <li class="nav-item active">
-                            <a class="nav-link btn btn-outline-dark" href="index">Home</a>
+                            <a class="nav-link text-dark" href="index">Home </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-dark" href="rules">Rules</a>
+                            <a class="nav-link text-dark" href="rules">Rules</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn btn-outline-dark" href="scoreboard">Scoreboard</a>
+                            <a class="nav-link text-dark" href="scoreboard">Scoreboard </a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
             <span class="navbar-text mr-sm-2">Angemeldet als <strong
                         class="username"><?php echo $this->username; ?></strong></span>
-                        <a class="btn btn-dark my-2 my-sm-0" href="logout" role="button">Logout</a>
+                        <a class="btn btn-outline-dark my-2 my-sm-0" href="logout" role="button">Logout</a>
                     </form>
                 </div>
             </nav>
@@ -112,3 +113,5 @@
 
     </div>
 </header>
+</body>
+</html>

@@ -1,39 +1,80 @@
-/* line 11, ../scss/main.scss */
-#main {
+div#main {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  display: grid;
 }
 @media (min-width: 990px) {
-  /* line 11, ../scss/main.scss */
   #main {
     width: 990px;
   }
 }
 
-div#rules{
-  background-color: whitesmoke;
-}
-
-
+/* Container für Homeseite */
 div#preStartContainer{
   margin: 0 auto;
-  background-color: whitesmoke;
-  border: white 3px solid;
-  width: 400px;
-  height: 450px;
+  background-color: #ffeaaa;
+  height: 480px;
   padding: 35px;
-  border-radius: 5px;
+  border-radius: 10px;
   opacity: 0.85;
 }
 
-div#toRules{
-  padding-right: 20px !important;
-  width: 135px;
-  height: 135px;
+div#buttoncontainer{
+  margin-top: 10px;
 }
 
-div#toScoreboard{
-  padding-left: 20px !important;
-  width: 125px;
-  height: 125px;
+/* Container Rules-Seite */
+div.container.text-center.py-5{
+  width: 990px;
+  background-color: #ffeaaa;
+  border-radius: 10px;
+}
+
+
+/* Tabelle von Scoreboard */
+th {
+  background-color: #ffeaaa;
+  border: none !important;
+}
+
+tbody {
+  background-color: #ffeaaa;
+  opacity: 0.85;
+  border: none;
+  overflow: scroll !important;
+}
+
+tr:nth-child(even){
+  background-color: white;
+}
+
+#scoretable>thead>tr:hover{
+  background-color: #e15260 !important;
+  color: #fff;
+}
+
+
+/* PROBE View Heights für Footer */
+div#login{
+  height: 75vh;
+}
+
+div#logout{
+  height: 75vh;
+}
+
+div#scoreboard{
+  width: 990px;
+  margin: 0 auto;
+  height: 110vh;
+}
+
+div#index{
+  height: 100vh;
+}
+
+div#rules{
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
 }
