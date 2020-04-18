@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-
     <?php if ($this->current == "login"): ?>
         <link href="css/toastr.min.css" rel="stylesheet">
     <?php endif; ?>

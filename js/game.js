@@ -109,8 +109,12 @@ function drawCircle(col, row, color) {
                 circle.style.backgroundColor = color;
                 document.querySelector('[col="' + col + '"][row="' + iFeld + '"]').appendChild(circle);
                 document.querySelector('[col="' + col + '"][row="' + iFeld + '"]').setAttribute("color", color);
-                anzZuege++;
-                if (anzZuege >= 7) {
+
+                if (color === spFarbe) {
+                    anzZuege++;
+                }
+
+                if (anzZuege >= 4) {
                     checkIfWon(parseInt(col), iFeld, color);
                 }
                 break;

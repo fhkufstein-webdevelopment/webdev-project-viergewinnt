@@ -64,9 +64,7 @@ div#logout{
 }
 
 div#scoreboard{
-  width: 990px;
-  margin: 0 auto;
-  height: 110vh;
+width: 100%;
 }
 
 div#index{
@@ -77,4 +75,13 @@ div#rules{
   margin: 0 auto;
   width: 100%;
   height: 100vh;
+}
+
+#button1{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#buttonNeuSpiel{
+  width: 100%;
 }
