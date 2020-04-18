@@ -57,9 +57,7 @@
 <header>
 
 		<?php if(LOGGED_IN == true): ?>
-            </br>
-            </br>
-            </br>
+
             <nav class="navbar navbar-expand-md navbar-light sticky-top mb-2 box-shadow">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
                         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
