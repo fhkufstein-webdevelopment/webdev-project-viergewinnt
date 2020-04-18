@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 
 
     //this is that we are able to trigger a submit although a button was clicked outside of your form!
-    registerModal.find('.btn-primary').click(function() {
+    registerModal.find('.btn-outline-warning').click(function() {
         registerModal.find('form').trigger('submit', [this]);
     });
 
@@ -23,12 +23,12 @@ jQuery(document).ready(function() {
     registerModal.find('form').bind('submit', function(e, that) {
         e.preventDefault();
 
-        registerModal.find('.btn-primary').prop('disabled', true); //prevent sending the formular again while we check it
+        registerModal.find('.btn-outline-warning').prop('disabled', true); //prevent sending the formular again while we check it
 
         hasError = false; //we are positive...
 
         if(typeof that === 'undefined') {
-            that = registerModal.find('.btn-primary').get(0);
+            that = registerModal.find('.btn-outline-warning').get(0);
         }
 
         var nonEmptyFields = ['#name', '#pwd', '#pwd2'];
@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
                 if($('#pwd').val() != $('#pwd2').val()) {
                     $('#pwd2').closest('.form-group').addClass('has-error');
                     hasError = true;
-                    registerModal.find('.btn-primary').prop('disabled', false);
+                    registerModal.find('.btn-outline-warning').prop('disabled', false);
                 } else {
                     //everything fine
 
@@ -80,7 +80,7 @@ jQuery(document).ready(function() {
                                 });
                             }
 
-                            registerModal.find('.btn-primary').prop('disabled', false);
+                            registerModal.find('.btn-outline-warning').prop('disabled', false);
                         }
                     });
 
@@ -88,7 +88,7 @@ jQuery(document).ready(function() {
             }
         }
 
-        registerModal.find('.btn-primary').prop('disabled', false);
+        registerModal.find('.btn-outline-warning').prop('disabled', false);
 
 
     });

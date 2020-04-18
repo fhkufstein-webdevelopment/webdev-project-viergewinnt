@@ -13,7 +13,7 @@ var clickbar = true;
 
 /**
  * Spieler bekommt die ausgewählte Farbe zugeteilt, der Computer-Gegner bekommt die andere Farbe
- * @param farbe
+ * @param farbe - definiert die Farbe des Spielers
  */
 function farbAuswahl(farbe) {
     spFarbe = farbe;
@@ -38,8 +38,8 @@ function startButton() {
 /**
  * zeichnet das Spielfeld in der Größe der Parameter
  * gibt jedem Feld die onClick Function drawClick()
- * @param rows
- * @param cols
+ * @param rows - Anzahl der Reihen
+ * @param cols - Anzahl der Spalten
  */
 function drawTable(rows, cols) {
     var div1 = document.getElementById('gamecontainer');
@@ -72,7 +72,7 @@ function drawTable(rows, cols) {
 /**
  * definiert das Feld in das geclickt wurde und ruft die drawCircle Function auf.
  * ruft aiZug() auf --> der Computergegner ist nach dem Spieler an der Reihe
- * @param feld
+ * @param feld - das Feld, in das geklickt wurde
  */
 function drawClick(feld) {
     let clickFeld = document.getElementById(feld);
@@ -97,7 +97,7 @@ function randomInt(max) {
  * Zeichnet einen Circle am Boden in die Row, die ausgewählt wurde.
  * @param col
  * @param row
- * @param color
+ * @param color - die Farbe die aktuell an der Reihe ist.
  */
 function drawCircle(col, row, color) {
     let firstField = document.querySelector('[col="' + col + '"][row="' + 0 + '"]');
@@ -109,8 +109,12 @@ function drawCircle(col, row, color) {
                 circle.style.backgroundColor = color;
                 document.querySelector('[col="' + col + '"][row="' + iFeld + '"]').appendChild(circle);
                 document.querySelector('[col="' + col + '"][row="' + iFeld + '"]').setAttribute("color", color);
-                anzZuege++;
-                if (anzZuege >= 7) {
+
+                if (color === spFarbe) {
+                    anzZuege++;
+                }
+
+                if (anzZuege >= 4) {
                     checkIfWon(parseInt(col), iFeld, color);
                 }
                 break;
@@ -162,7 +166,7 @@ function checkSenkrecht(col, row, color) {
 
 /**
  * Checkt, ob der Spieler gewonnen oder verloren hat.
- * @param anzZuege
+ * @param anzZuege - Anzahl der benötigten Züge
  * @param color
  * @param col
  * @param row
@@ -278,6 +282,7 @@ function checkWaagrecht(col, row, color) {
         }
     }
 }
+
 
 /**
  * Gibt dem Spieler bekannt, ob dieser gewonnen oder verloren hat und verlinkt zum Scoreboard.

@@ -12,10 +12,12 @@ echo $this->header;
 <div id="main">
     <div id="logout">
         <div class="row">
-            <h1 class="col-sm-12">Logout erfolgreich</h1>
-            <p class="col-sm-12">
-                <br>Sie sind jetzt abgemeldet. Klicken Sie <a href="login">hier</a> um sich wieder anzumelden.<br>
-            </p>
+            <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2" id="logoutDiv">
+                <h1 class="col-sm-12">Logout erfolgreich</h1>
+                <p class="col-sm-12">
+                    <br>Sie sind jetzt abgemeldet. Klicken Sie <a href="login">hier</a> um sich wieder anzumelden.<br>
+                </p>
+            </div>
         </div>
     </div>
 </div>
