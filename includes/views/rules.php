@@ -3,16 +3,14 @@
 echo $this->header;
 
 ?>
-
+    <div id="main">
     <div id="rules">
-        <div class="container text-center py-4">
+        <div class="container text-center py-5">
             <h3 class="text-center display-4">Spielregeln</h3>
 
             <p>Ziel bei „Vier gewinnt“ ist es, die Spielchips der eigenen Farbe so zu platzieren, dass 4 Spielchips
-                diagonal, waagerecht oder <br/>
-                senkrecht in einer Reihe liegen. Der Spieler, dem das zuerst gelingt, hat gewonnen. Dabei ist nicht nur auf
-                den eigenen <br/>
-                Erflog zu achten, sondern auch darauf, dass es dem Gegnenspieler nicht gelingt die Reihe zu vollenden.</p>
+                diagonal, waagerecht oder senkrecht in einer Reihe liegen. Der Spieler, dem das zuerst gelingt, hat gewonnen. Dabei ist nicht nur auf
+                den eigenen Erflog zu achten, sondern auch darauf, dass es dem Gegnenspieler nicht gelingt die Reihe zu vollenden.</p>
 
             <div class="row mt-5 mb-1">
                 <div class="col-sm-3">
@@ -39,7 +37,7 @@ echo $this->header;
             </div>
         </div>
     </div>
-
+    </div>
 
 <?php
 
