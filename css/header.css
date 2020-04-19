@@ -25,7 +25,7 @@ header::after{
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     bottom:0;
     background-color: #ffca2b;
     width: 100%;
