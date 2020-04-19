@@ -50,6 +50,8 @@
         <script type="text/javascript" src="js/login.js"></script>
     <?php endif; ?>
 
+<!--    <script type="text/javascript" src="js/music.js"></script>-->
+
 
 </head>
 <body>

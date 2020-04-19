@@ -293,6 +293,8 @@ function checkWaagrecht(col, row, color) {
 function gameWon(anz_zuege, color, spGewonnen) {
     if (spGewonnen) {
         $('#gewonnenDiv').append('<p>du hast gewonnen</p>');
+        var audio = new Audio('audio/victory.mp3');
+        audio.play();
     } else {
         $('#gewonnenDiv').append('<p>du hast verloren</p>');
     }
