@@ -44,11 +44,6 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-#scoretable > thead > tr:hover {
-    background-color: #e15260 !important;
-    color: #fff;
-}
-
 
 /* PROBE View Heights für Footer */
 div#login {

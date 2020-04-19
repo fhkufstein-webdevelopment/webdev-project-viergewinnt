@@ -15,7 +15,7 @@
         <link href="css/toastr.min.css" rel="stylesheet">
     <?php endif; ?>
     <link href="css/main.css" rel="stylesheet">
-    <link href="css/header.css" rel="stylesheet">
+    <link href="css/header-footer.css" rel="stylesheet">
     <style type="text/css">
         .modal-backdrop {
             opacity: 0.3 !important;
