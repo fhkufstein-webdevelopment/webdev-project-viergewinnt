@@ -292,11 +292,9 @@ function checkWaagrecht(col, row, color) {
  */
 function gameWon(anz_zuege, color, spGewonnen) {
     if (spGewonnen) {
-        $('#gewonnenDiv').append('<p>du hast gewonnen</p>');
-        var audio = new Audio('audio/victory.mp3');
-        audio.play();
+        $("#gameWonModal").modal('show');
     } else {
-        $('#gewonnenDiv').append('<p>du hast verloren</p>');
+        $("#gameLostModal").modal('show');
     }
     $('#zumScoreBoard').append('<button id="zumSBButton" type="button" class="btn btn-lg btn-danger"\n' +
         '                                onclick="updateDB(' + anz_zuege + ',' + spGewonnen + ')">zum Scoreboard</button>');
