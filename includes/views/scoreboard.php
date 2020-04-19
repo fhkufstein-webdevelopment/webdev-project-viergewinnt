@@ -10,7 +10,7 @@ echo $this->header;
         <div class="row" style="margin: 0; width: 100%">
 
             <?php if ($this->scores): ?>
-                <table class="table table-striped col-md-6 offset-md-3 col-sm-12" id="scoretable">
+                <table id="scoretable" class="table table-striped col-md-6 offset-md-3 col-sm-12">
                     <thead>
                     <tr>
                         <th>User</th>
@@ -20,7 +20,7 @@ echo $this->header;
                     </thead>
                     <tbody>
                     <?php foreach ($this->scores as $score): ?>
-                        <tr>
+                        <tr id="zeile">
                             <td><?php echo $score->name; ?></td>
                             <td><?php echo $score->Anzahl_Zuege; ?></td>
 

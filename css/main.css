@@ -4,7 +4,6 @@ div#main {
     display: grid;
 }
 
-
 /* Container für Homeseite */
 div#preStartContainer {
     margin: 0 auto;
@@ -19,13 +18,17 @@ div#buttoncontainer {
     margin-top: 10px;
 }
 
-/* Container Rules-Seite */
-div.container.text-center.py-5 {
+/* Rules-Seite */
+div#rules {
+    margin-bottom: 30px;
+    width: 100%;
+}
+div.container.text-center{
+    padding: 20px 30px;
     width: 990px;
     background-color: #ffeaaa;
     border-radius: 10px;
 }
-
 
 /* Tabelle von Scoreboard */
 th {
@@ -44,23 +47,11 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-
-/* PROBE View Heights für Footer */
-div#login {
-
-}
-
-div#logout {
-
-}
-
-
-div#rules {
-    margin: 0 auto;
+a#buttonNeuSpiel {
     width: 100%;
 }
 
-
-#buttonNeuSpiel {
-    width: 100%;
+tr#zeile:hover{
+    color: white;
+    background-color: #e15260;
 }
