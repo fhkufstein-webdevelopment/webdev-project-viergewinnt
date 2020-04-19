@@ -7,7 +7,7 @@ echo $this->header;
 <div id="main">
 
     <div id="scoreboard">
-        <div class="row">
+        <div class="row" style="margin: 0; width: 100%">
 
             <?php if ($this->scores): ?>
                 <table class="table table-striped col-md-6 offset-md-3 col-sm-12" id="scoretable">
@@ -35,7 +35,7 @@ echo $this->header;
             <?php endif; ?>
         </div>
 
-        <div class="row" id="button1">
+        <div class="row" id="button1" style="margin: 1rem 0 1rem 0">
             <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3">
                 <a class="btn btn-danger" id="buttonNeuSpiel" href="index" role="button">neues Spiel</a>
             </div>
@@ -43,9 +43,6 @@ echo $this->header;
     </div>
 </div>
 
-<?php
-
-echo $this->footer;
-
-?>
+</body>
+</html>
 

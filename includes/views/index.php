@@ -7,7 +7,7 @@ echo $this->header;
 
 <div id="main">
     <div id="index">
-        <div class="row justify-content-center" id="gamerow">
+        <div class="row justify-content-center" id="gamerow" style="margin: 0 0 2rem 0">
 
             <div id="preStartContainer" class="col-md-6 col-sm-12">
                 <script type="text/javascript" src="js/game.js"></script>
@@ -77,8 +77,5 @@ echo $this->header;
     </div>
 </div>
 
-<?php
-
-echo $this->footer;
-
-?>
+</body>
+</html>
