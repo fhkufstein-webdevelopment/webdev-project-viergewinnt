@@ -9,6 +9,9 @@ var container = document.getElementById('gamecontainer');
 var anzZuege = 0;
 var gameOver = false;
 var clickbar = true;
+var victory = new Audio('audio/victory.mp3');
+var sail = new Audio('audio/sail.mp3');
+sail.play();
 
 
 /**
@@ -292,6 +295,8 @@ function checkWaagrecht(col, row, color) {
  */
 function gameWon(anz_zuege, color, spGewonnen) {
     if (spGewonnen) {
+        sail.pause();
+        victory.play();
         $("#gameWonModal").modal('show');
     } else {
         $("#gameLostModal").modal('show');

@@ -34,7 +34,7 @@ echo $this->header;
         </div>
         <div class="row justify-content-center" id="gewonnenDiv">
         </div>
-        <div class="row justify-content-center" id="zumScoreBoard">
+        <div class="row justify-content-center" id="zumScoreBoard" style="margin-top: 2rem">
         </div>
     </div>
 </div>
@@ -46,17 +46,17 @@ echo $this->header;
                 <h5 class="modal-title" id="exampleModalLongTitle">Glückwunsch</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="false">&times;</span>
-                    </button>
-                </div>
+                </button>
+            </div>
             <div class="modal-body">
                 Herzlichen Glückwunsch, Sie haben gewonnen!
-                </div>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal" >Schließen</button>
-                </div>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Schließen</button>
             </div>
         </div>
     </div>
+</div>
 
 <div class="modal" id="gameLostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -71,7 +71,7 @@ echo $this->header;
                 Nächstes Mal gewinnen Sie sicher :)
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" >Schließen</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Schließen</button>
             </div>
         </div>
     </div>

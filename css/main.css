@@ -82,6 +82,10 @@ div#rules{
   margin-bottom: 1rem;
 }
 
+#gamerow{
+  margin-bottom: 2rem;
+}
+
 #buttonNeuSpiel{
   width: 100%;
 }
